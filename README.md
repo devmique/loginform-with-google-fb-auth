@@ -69,3 +69,67 @@ These are what you’ll use in your PHP code (`google-login.php`, `google-callba
 ---
 
 Facebook: 
+
+
+
+ Step-by-Step: Set Up Facebook Login
+
+ Step 1: Go to [https://developers.facebook.com/apps](https://developers.facebook.com/apps)
+
+1. Login using your Facebook account.
+2. Click the **“Create App”** button (top right).
+3. Choose **“Consumer”** → Click **Next**.
+4. App name:  
+   Example:
+   ```
+   ParentPortal Facebook Auth
+   ```
+5. Fill in your email, then click **Create App**.
+6. Complete the security check.
+
+---
+
+ Step 2: Add Facebook Login to Your App
+
+1. After app creation, in the dashboard, click **“Set Up”** under **Facebook Login**.
+2. Choose **"Web"** as your platform.
+3. Enter your **site URL**:  
+   ```
+   http://localhost/parentportal/
+   ```
+   Click **Save** and **Continue**.
+
+
+
+Step 3: Configure Valid OAuth Redirect URI
+
+1. Go to **Settings > Basic** and **Settings > Advanced** (on the left sidebar).
+2. Then go to:  
+   **Facebook Login > Settings** (sidebar under Products).
+3. Under **Valid OAuth Redirect URIs**, add:
+
+```
+http://localhost/parentportal/fb-callback.php
+```
+
+> This is the PHP file that will handle the login response (like `google-callback.php`).
+
+4. Click **Save Changes**.
+
+---
+
+ Step 4: Get App ID and App Secret
+
+- Go to **Settings > Basic**.
+- You’ll find:
+  - **App ID**
+  - **App Secret** (Click “Show” and confirm your Facebook password)
+
+
+
+🔐 You now have:
+- **App ID** for Facebook
+- **App Secret**
+- A redirect URI: `http://localhost/parentportal/fb-callback.php`
+
+
